@@ -66,7 +66,9 @@ export default function Nav() {
 
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="#get-started"
+              href="https://trip-split-zeta-taupe.vercel.app/login"
+              target="_blank"
+              rel="noreferrer"
               className="text-[0.9rem] font-semibold text-cream/80 hover:text-paper px-3 py-2 transition-colors"
             >
               Log in
@@ -137,7 +139,9 @@ export default function Nav() {
               Create a Trip <IconArrow size={16} />
             </a>
             <a
-              href="#get-started"
+              href="https://trip-split-zeta-taupe.vercel.app/login"
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="flex items-center justify-center rounded-full border border-cream/20 px-5 py-3.5 font-semibold text-cream/85"
             >
