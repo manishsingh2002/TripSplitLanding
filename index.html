@@ -1,97 +1,56 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>coder-app-name</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    <title>TripSplit — Travel together. Split smarter. | Group Trip Planner &amp; Travel Expense Splitter</title>
+    <meta
+      name="description"
+      content="TripSplit is the group travel companion that plans your trip, tracks every expense, splits costs fairly with friends, settles up in fewer payments, and turns your journey into insights, achievements and memories. The travel budget planner and trip expense splitter for friends, couples and families."
     />
-    <style>
-      /* 内联样式确保主题色立即生效，避免闪烁 */
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
+    <meta
+      name="keywords"
+      content="trip expense splitter, travel expense tracker, group travel expenses, split expenses with friends, travel budget planner, group trip planner, trip finance app, travel expense management, settle up, travel with friends"
+    />
+    <meta name="theme-color" content="#0C1420" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TripSplit" />
+    <meta property="og:title" content="TripSplit — Your trip. Your people. Your expenses. Sorted." />
+    <meta
+      property="og:description"
+      content="Plan the adventure. Share the expenses. Keep the memories. TripSplit brings trip planning, group expense splitting, settlements, insights and travel memories into one beautiful app."
+    />
+    <meta property="og:image" content="https://image.qwenlm.ai/generated-images/d5387519-4746-47ef-95f7-6552850b65a4/_result.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TripSplit — Travel together. Split smarter." />
+    <meta
+      name="twitter:description"
+      content="One app for the entire trip — plan, track, split, settle, discover and remember."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2C9.9 2 5 6.9 5 13c0 8 11 17 11 17s11-9 11-17c0-6.1-4.9-11-11-11z' fill='%23FF5A36'/%3E%3Cpath d='M12 10.5h8M16 10.5v4.5m0 0l-3.5 3.5M16 15l3.5 3.5' stroke='%23FCF8EE' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TripSplit",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Web",
+        "description": "Group trip planner and travel expense splitter — plan trips, track and split expenses, settle up, and keep the memories.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
       }
-      html.light,
-      html.light body {
-        background-color: #ffffff !important;
-        color: #000000;
-      }
-      html.dark,
-      html.dark body {
-        background-color: #1a1a1a !important;
-        color: #ffffff;
-      }
-    </style>
-    <script>
-      // 在 React 加载前立即设置主题，避免闪烁
-      (function () {
-        const isInIframe = window.self !== window.top;
-
-        function applyThemeToDOM(theme) {
-          document.documentElement.classList.remove("light", "dark");
-          document.documentElement.classList.add(theme);
-          document.documentElement.setAttribute("data-theme", theme);
-        }
-
-        if (isInIframe) {
-          // 监听父窗口主动推送的主题消息
-          window.addEventListener("message", function (event) {
-            if (event.data && typeof event.data.theme === "string") {
-              const theme = event.data.theme;
-              if (theme === "light" || theme === "dark") {
-                applyThemeToDOM(theme);
-              }
-            }
-          });
-        } else {
-          // 非 iframe 环境，使用默认 light 主题
-          applyThemeToDOM("light");
-        }
-      })();
-    </script>
-      <script>
-      (function () {
-        if (window.self === window.top) return;
-        var reported = {};
-        window.addEventListener("error", function (event) {
-          // 资源加载失败的 error 事件没有 message，此处仅上报 JS 运行时错误
-          if (!event || !event.message) return;
-          var key =
-            event.message + "|" + (event.filename || "") + "|" + (event.lineno || 0);
-          if (reported[key]) return; // 相同错误只上报一次，避免渲染循环刷屏
-          reported[key] = true;
-          try {
-            window.parent.postMessage(
-              {
-                type: "sandbox-runtime-error",
-                payload: {
-                  message: String(event.message).slice(0, 500),
-                  filename: event.filename || "",
-                  lineno: event.lineno || 0,
-                  colno: event.colno || 0,
-                  stack:
-                    event.error && event.error.stack
-                      ? String(event.error.stack).slice(0, 2000)
-                      : ""
-                }
-              },
-              "*"
-            );
-          } catch (e) {
-            /* 上报失败不影响页面运行 */
-          }
-        });
-      })();
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
